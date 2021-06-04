@@ -3,7 +3,16 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:CouchTo5kTracker"
        x:Class="CouchTo5kTracker.AppShell">
-    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+    <FlyoutItem x:Name="FlyoutTop" FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent x:Name="FlyoutHomeTab" Title="Home Page" ContentTemplate="{DataTemplate views:HomePage}"/>
+    </FlyoutItem>
+    <FlyoutItem x:Name="FlyoutMain" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent x:Name="FlyoutTimerTab" Title="Timer" ContentTemplate="{DataTemplate views:TimerPage}"/>
+        <ShellContent x:Name="FlyoutRunsTab" Title="Runs" ContentTemplate="{DataTemplate views:RunsPage}"/>
+        <ShellContent x:Name="FlyoutProgressTab" Title="Progress" ContentTemplate="{DataTemplate views:ProgressPage}"/>
+        <ShellContent x:Name="FlyoutCalendarTab" Title="Calendar" ContentTemplate="{DataTemplate views:CalendarPage}"/>
+    </FlyoutItem>
+    <FlyoutItem x:Name="FlyoutBottom" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent x:Name="FlyoutSettingsTab" Title="Settings" ContentTemplate="{DataTemplate views:SettingsPage}"/>
     </FlyoutItem>
 </Shell>

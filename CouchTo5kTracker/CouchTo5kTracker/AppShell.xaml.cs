@@ -15,9 +15,28 @@ namespace CouchTo5kTracker
         public AppShell()
         {
             InitializeComponent();
+            SetTabBarIsVisible(this, false);
+
+            ImageSource menuImage = ImageSource.FromStream(() => new MemoryStream(Properties.Resources.menu));
+            FlyoutMain.FlyoutIcon = menuImage;
 
             ImageSource homeImage = ImageSource.FromStream(() => new MemoryStream(Properties.Resources.home));
             FlyoutHomeTab.Icon = homeImage;
+
+            ImageSource timerImage = ImageSource.FromStream(() => new MemoryStream(Properties.Resources.timer));
+            FlyoutTimerTab.FlyoutIcon = timerImage;
+
+            ImageSource listImage = ImageSource.FromStream(() => new MemoryStream(Properties.Resources.list));
+            FlyoutRunsTab.FlyoutIcon = listImage;
+
+            ImageSource percentImage = ImageSource.FromStream(() => new MemoryStream(Properties.Resources.percent));
+            FlyoutProgressTab.FlyoutIcon = percentImage;
+
+            ImageSource calendarImage = ImageSource.FromStream(() => new MemoryStream(Properties.Resources.calendar));
+            FlyoutCalendarTab.FlyoutIcon = calendarImage;
+
+            ImageSource settingsImage = ImageSource.FromStream(() => new MemoryStream(Properties.Resources.settings));
+            FlyoutSettingsTab.FlyoutIcon = settingsImage;
         }
     }
 }
