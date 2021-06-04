@@ -10,7 +10,7 @@ namespace CouchTo5kTracker
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new AppShell();
         }
 
         protected override void OnStart()

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:CouchTo5kTracker"
+       x:Class="CouchTo5kTracker.AppShell">
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent x:Name="FlyoutHomeTab" Title="Home Page" ContentTemplate="{DataTemplate views:HomePage}"/>
+    </FlyoutItem>
+</Shell>
