@@ -5,10 +5,72 @@
              x:Class="CouchTo5kTracker.HomePage">
     <ContentPage.Content>
         <Grid x:Name="MainGrid">
-            <skia:SKCanvasView x:Name="canvasView" PaintSurface="OnCanvasViewPaintSurface" Grid.Row="0"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="350"/>
+            </Grid.RowDefinitions>
+            <AbsoluteLayout x:Name="AbsoluteLayoutProgress" Grid.Row="0" HorizontalOptions="FillAndExpand">
+                <skia:SKCanvasView x:Name="canvasView" PaintSurface="OnCanvasViewPaintSurface" AbsoluteLayout.LayoutBounds="0, 0" AbsoluteLayout.LayoutFlags="XProportional"/>
+                <Label x:Name="WeekCounter" Text="3/5" FontSize="90" AbsoluteLayout.LayoutBounds="0.5, 100, 150, 150" AbsoluteLayout.LayoutFlags="XProportional"/>
+                <Label x:Name="WeekLabel" Text="Week" FontSize="30" AbsoluteLayout.LayoutBounds="0.5, 220, 80, 50" AbsoluteLayout.LayoutFlags="XProportional"/>
+            </AbsoluteLayout>
             <StackLayout Grid.Row="1">
-                <Slider x:Name="SweepSlider" Minimum="0" Maximum="100" ValueChanged="SweepSlider_ValueChanged"/>
+                <Grid x:Name="RunGrid" RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3.75*"/>
+                        <ColumnDefinition Width="1.25*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#1476D2" Padding="10,5,5,5" Margin="8,0,1,5">
+                        <Label Text="Next Run" VerticalOptions="Center" FontSize="15" FontAttributes="Bold" TextColor="White"/>
+                    </Frame>
+                    <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#1476D2" Padding="10,5,5,5" Margin="1,0,8,5">
+                        <Label Text="Date" VerticalOptions="Center" FontSize="15" FontAttributes="Bold" TextColor="White"/>
+                    </Frame>
+                    <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="#F7F7F7" Padding="10,5,5,5" Margin="8,0,0,5">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Frame.GestureRecognizers>
+                        <Label x:Name="NextRunLabel" Text="Next Run: Week 4, Run 3" VerticalOptions="Center" FontSize="15"/>
+                    </Frame>
+                    <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="#F7F7F7" Padding="10,5,5,5" Margin="1,0,8,5">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Frame.GestureRecognizers>
+                        <Label x:Name="NextRunDateLabel" Text="12/04" VerticalOptions="Center" FontSize="15"/>
+                    </Frame>
+                </Grid>
             </StackLayout>
+            <Grid Grid.Row="1" VerticalOptions="End" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Frame Grid.Column="0" Grid.Row="0" BorderColor="White" HasShadow="False">
+                    <Grid RowSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="45"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="Run Time" FontSize="15" HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="0"/>
+                        <Label x:Name="RunTimeTitleLabel" Text="21:30" FontSize="40" HorizontalOptions="Center" VerticalOptions="End" Grid.Row="1"/>
+                    </Grid>
+                </Frame>
+                <Frame Grid.Column="1" Grid.Row="0" BackgroundColor="#1476D2" BorderColor="#1476D2" HasShadow="False" CornerRadius="30" Margin="32,45,32,15" Padding="0">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Run"/>
+                    </Frame.GestureRecognizers>
+                    <Label x:Name="RunTimeLabel" Text="Start Run" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" TextColor="White"/>
+                </Frame>
+            </Grid>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
