@@ -16,6 +16,7 @@ namespace CouchTo5kTracker
         {
             InitializeComponent();
             SetTabBarIsVisible(this, false);
+            Shell.SetBackgroundColor(this, Color.FromHex("2d5d7b"));
 
             ImageSource menuImage = ImageSource.FromStream(() => new MemoryStream(Properties.Resources.menu));
             FlyoutMain.FlyoutIcon = menuImage;

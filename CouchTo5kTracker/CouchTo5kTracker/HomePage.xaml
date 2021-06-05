@@ -4,16 +4,11 @@
              xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              x:Class="CouchTo5kTracker.HomePage">
     <ContentPage.Content>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-
+        <Grid x:Name="MainGrid">
             <skia:SKCanvasView x:Name="canvasView" PaintSurface="OnCanvasViewPaintSurface" Grid.Row="0"/>
-            <Slider x:Name="SweepSlider" Minimum="0" Maximum="360" ValueChanged="SweepSlider_ValueChanged"/>
+            <StackLayout Grid.Row="1">
+                <Slider x:Name="SweepSlider" Minimum="0" Maximum="100" ValueChanged="SweepSlider_ValueChanged"/>
+            </StackLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
