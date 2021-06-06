@@ -12,9 +12,15 @@ namespace CouchTo5kTracker
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CurrentRunPage : ContentPage
     {
+
         public CurrentRunPage()
         {
             InitializeComponent();
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
         }
     }
 }

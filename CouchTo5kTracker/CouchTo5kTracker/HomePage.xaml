@@ -61,14 +61,14 @@
                             <RowDefinition Height="45"/>
                         </Grid.RowDefinitions>
                         <Label Text="Run Time" FontSize="15" HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="0"/>
-                        <Label x:Name="RunTimeTitleLabel" Text="21:30" FontSize="40" HorizontalOptions="Center" VerticalOptions="End" Grid.Row="1"/>
+                        <Label x:Name="RunTimeLabel" Text="21:30" FontSize="40" HorizontalOptions="Center" VerticalOptions="End" Grid.Row="1"/>
                     </Grid>
                 </Frame>
                 <Frame Grid.Column="1" Grid.Row="0" BackgroundColor="#1476D2" BorderColor="#1476D2" HasShadow="False" CornerRadius="30" Margin="32,45,32,15" Padding="0">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Run"/>
                     </Frame.GestureRecognizers>
-                    <Label x:Name="RunTimeLabel" Text="Start Run" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" TextColor="White"/>
+                    <Label x:Name="RunStartLabel" Text="Start Run" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" TextColor="White"/>
                 </Frame>
             </Grid>
         </Grid>
