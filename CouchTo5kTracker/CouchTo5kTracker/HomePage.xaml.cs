@@ -36,15 +36,13 @@ const var resourcePrefix = "CouchTo5kTracker.Droid.";
             string jsonPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "savedRuns.json");
             //RunGrid.RowSpacing = 0f; //Push the next run up to the next run title
             Run testRun = new Run("Test Run", new Date(12, 5), Run.WeekEnum.W4, Run.RunEnum.R2, new Time(21, 0)); //create a test run to set as next run
-            //setNextRun(testRun);
+
             JSON.save(jsonPath, testRun);
             string nextRunJson = JSON.load(jsonPath);
             Run jsonRun = JSON.parse<Run>(nextRunJson);
 
             setNextRun(jsonRun);
         }
-
-
 
         public void SetProgress(float value) //interaction method
         {

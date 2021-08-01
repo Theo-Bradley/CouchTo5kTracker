@@ -63,6 +63,26 @@ namespace CouchTo5kTracker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] back {
+            get {
+                object obj = ResourceManager.GetObject("back", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] backBlue {
+            get {
+                object obj = ResourceManager.GetObject("backBlue", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] calendar {
             get {
                 object obj = ResourceManager.GetObject("calendar", resourceCulture);
