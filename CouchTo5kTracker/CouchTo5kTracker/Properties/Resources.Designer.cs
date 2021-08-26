@@ -22,7 +22,7 @@ namespace CouchTo5kTracker.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace CouchTo5kTracker.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CouchTo5kTracker.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace CouchTo5kTracker.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace CouchTo5kTracker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] back {
+        public static byte[] back {
             get {
                 object obj = ResourceManager.GetObject("back", resourceCulture);
                 return ((byte[])(obj));
@@ -73,7 +73,7 @@ namespace CouchTo5kTracker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] backBlue {
+        public static byte[] backBlue {
             get {
                 object obj = ResourceManager.GetObject("backBlue", resourceCulture);
                 return ((byte[])(obj));
@@ -83,7 +83,7 @@ namespace CouchTo5kTracker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] calendar {
+        public static byte[] calendar {
             get {
                 object obj = ResourceManager.GetObject("calendar", resourceCulture);
                 return ((byte[])(obj));
@@ -91,9 +91,30 @@ namespace CouchTo5kTracker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ?&lt;html&gt;
+        ///&lt;head&gt;
+        ///&lt;title&gt;The Code Project Open License (CPOL)&lt;/title&gt;
+        ///&lt;Style&gt;
+        ///BODY, P, TD { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt }
+        ///H1,H2,H3,H4,H5 { color: #ff9900; font-weight: bold; }
+        ///H1 { font-size: 14pt;color:black }
+        ///H2 { font-size: 13pt; }
+        ///H3 { font-size: 12pt; }
+        ///H4 { font-size: 10pt; color: black; }
+        ///PRE { BACKGROUND-COLOR: #FBEDBB; FONT-FAMILY: &quot;Courier New&quot;, Courier, mono; WHITE-SPACE: pre; }
+        ///CODE { COLOR: #990000; FONT-FAMILY: &quot;Courier New&quot;, Courier, mono; }
+        ///.S [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string CPOL {
+            get {
+                return ResourceManager.GetString("CPOL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] home {
+        public static byte[] home {
             get {
                 object obj = ResourceManager.GetObject("home", resourceCulture);
                 return ((byte[])(obj));
@@ -103,7 +124,7 @@ namespace CouchTo5kTracker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] list {
+        public static byte[] list {
             get {
                 object obj = ResourceManager.GetObject("list", resourceCulture);
                 return ((byte[])(obj));
@@ -113,7 +134,7 @@ namespace CouchTo5kTracker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] menu {
+        public static byte[] menu {
             get {
                 object obj = ResourceManager.GetObject("menu", resourceCulture);
                 return ((byte[])(obj));
@@ -123,7 +144,7 @@ namespace CouchTo5kTracker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] percent {
+        public static byte[] percent {
             get {
                 object obj = ResourceManager.GetObject("percent", resourceCulture);
                 return ((byte[])(obj));
@@ -133,7 +154,7 @@ namespace CouchTo5kTracker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] settings {
+        public static byte[] settings {
             get {
                 object obj = ResourceManager.GetObject("settings", resourceCulture);
                 return ((byte[])(obj));
@@ -143,7 +164,7 @@ namespace CouchTo5kTracker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] timer {
+        public static byte[] timer {
             get {
                 object obj = ResourceManager.GetObject("timer", resourceCulture);
                 return ((byte[])(obj));
