@@ -5,15 +5,19 @@
              x:Class="CouchTo5kTracker.CurrentRunPage">
     <ContentPage.Content>
         <StackLayout>
-            <AbsoluteLayout>
-                <Frame BackgroundColor="#1476D2" CornerRadius="0" Padding="5" AbsoluteLayout.LayoutBounds="0, 0, 1, 0.11" AbsoluteLayout.LayoutFlags="All">
-                    <Button x:Name="BackButton" BackgroundColor="#1476D2" Scale="0.35" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Padding="0" Margin="-30,0" Pressed="BackButton_Pressed"/>
-                </Frame>
-                <Label x:Name="TimerLabel" Text="20:05" FontSize="105" AbsoluteLayout.LayoutBounds="0.37, 0" AbsoluteLayout.LayoutFlags="PositionProportional" Margin="0, 65, 0, 15"/>
-                <Label x:Name="MilliLabel" Text="59" FontSize="35" AbsoluteLayout.LayoutBounds="0.94, 0" AbsoluteLayout.LayoutFlags="PositionProportional" Margin="0,90,0,15"/>
-                <skia:SKCanvasView x:Name="canvasView" PaintSurface="OnCanvasViewPaintSurface" AbsoluteLayout.LayoutBounds="0, 0.55" AbsoluteLayout.LayoutFlags="YProportional" HorizontalOptions="CenterAndExpand"/>
-                <Slider x:Name="barslider" AbsoluteLayout.LayoutBounds="0, 0.75, 1, 0.3" AbsoluteLayout.LayoutFlags="All" ValueChanged="OnSliderValueChanged"/>
-            </AbsoluteLayout>
+            <Frame BackgroundColor="#1476D2" CornerRadius="0" Padding="-30,0,0,0">
+                <Button x:Name="BackButton" BackgroundColor="#1476D2" Scale="0.3" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Padding="0,0,0,0" Margin="0,-32,0,-32" Pressed="BackButton_Pressed"/>
+            </Frame>
+            <Grid ColumnSpacing="0" Margin="0,15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="TimerLabel" Text="20:05" FontSize="105" HorizontalOptions="Center" Padding="0,0,0,0" Margin="0, 0, 0, 0" Grid.Column="0"/>
+                <Label x:Name="MilliLabel" Text="59" FontSize="35" Margin="-5,25,0,15" Grid.Column="1"/>
+            </Grid>
+            <skia:SKCanvasView x:Name="canvasView" PaintSurface="OnCanvasViewPaintSurface" HorizontalOptions="CenterAndExpand"/>
+            <Slider x:Name="barslider" ValueChanged="OnSliderValueChanged"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
