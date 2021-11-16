@@ -18,6 +18,7 @@ namespace CouchTo5kTracker
         private bool back = false;
         private float progress = 0.5f; //test value, later set to 0.01f (minimum defined by the clamp)
         private float screenWidth;
+        private bool runPasued = false;
 
 
         SKPaint backPaint = new SKPaint
@@ -122,6 +123,31 @@ namespace CouchTo5kTracker
             System.Console.WriteLine("Value: " + value.ToString()); //print the slider value to the console
             System.Console.WriteLine("Position: " + ((screenWidth - 70) * Mathf.Clamp<float>(progress, 0.01f, 1f)) + 35.1f); //print the position of the end of the bar (calculated in the same way as the end of the bar)
             PrepareCanvas(); //tell the canvas it needs to be redrawn
+        }
+
+        private void PauseButton_Pressed(object sender, EventArgs e) //called when the play/paused label was pressed
+        {
+            if (!runPasued) //if the run is ongoing
+            {
+                PausePlayButton.Text = "Resume"; //change text
+                Console.WriteLine("Paused. \n"); //debug message
+                PausePlayFrame.BackgroundColor = Color.FromHex("FF0000"); //change to better red colour
+                PausePlayFrame.BorderColor = Color.FromHex("FF0000"); //change to better red colour
+                runPasued = true; //change paused flip-flop bool
+            }
+            else //if the run is paused
+            {
+                PausePlayButton.Text = "Pause"; //change text
+                Console.WriteLine("Resumed. \n"); //debug message
+                PausePlayFrame.BackgroundColor = Color.FromHex("1476D2"); //set background colour to default blue
+                PausePlayFrame.BorderColor = Color.FromHex("1476D2"); //set border colour to default blue
+                runPasued = false; //change paused flip-flop bool
+            }
+        }
+
+        private void StopButton_Pressed(object sender, EventArgs e) //is stop button pressed
+        {
+            Navigation.PopModalAsync(); //Remove most recently added page (Current Run page)
         }
     }
 }

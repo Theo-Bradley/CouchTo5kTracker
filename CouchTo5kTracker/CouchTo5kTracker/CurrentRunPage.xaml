@@ -17,7 +17,33 @@
                 <Label x:Name="MilliLabel" Text="59" FontSize="35" Margin="-5,25,0,15" Grid.Column="1"/>
             </Grid>
             <skia:SKCanvasView x:Name="canvasView" PaintSurface="OnCanvasViewPaintSurface" HorizontalOptions="CenterAndExpand"/>
-            <Slider x:Name="barslider" ValueChanged="OnSliderValueChanged"/>
+            <Frame BackgroundColor="#F1F1F1F1" Padding="10,5" Margin="8,0" HorizontalOptions="CenterAndExpand">
+                <StackLayout HorizontalOptions="CenterAndExpand">
+
+                </StackLayout>
+            </Frame>
+            <Grid VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <Frame x:Name="PausePlayFrame" Grid.Row="0" Grid.Column="0" BackgroundColor="#1476D2" BorderColor="#1476D2" HasShadow="False" CornerRadius="30" Margin="32,45,32,15" Padding="0">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="PauseButton_Pressed"/>
+                    </Frame.GestureRecognizers>
+                    <Label x:Name="PausePlayButton" Text="Pause" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" TextColor="White"/>
+                </Frame>
+                <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#FF0000" BorderColor="#FF0000" HasShadow="False" CornerRadius="30" Margin="32,45,32,15" Padding="0">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="StopButton_Pressed"/>
+                    </Frame.GestureRecognizers>
+                    <Label x:Name="StopButton" Text="Stop" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" TextColor="White"/>
+                </Frame>
+            </Grid>
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>
