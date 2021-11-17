@@ -43,6 +43,23 @@ namespace CouchTo5kTracker.Classes
             File.WriteAllText(path, json);
         }
 
+        public static string load(Stream stream)
+        {
+            string jsonString = "";
+            using (var reader = new StreamReader(stream))
+            {
+                jsonString = reader.ReadToEnd();
+            }
+            return jsonString;
+        }
+
+        public static void saveStream(Stream streamR, object obj)
+        {
+            string json = JsonConvert.SerializeObject(obj, Formatting.Indented);
+
+
+        }
+
         public static void clear(string path)
         {
             File.Delete(path);

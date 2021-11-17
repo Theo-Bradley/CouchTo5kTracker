@@ -48,6 +48,8 @@ namespace CouchTo5kTracker
             canvasView.HeightRequest = 64; //set the progress bar canvas to the minimum possible height
             //BackButton.Scale = 0.4;
             //<Image x:Name="BackImage" AbsoluteLayout.LayoutBounds="0.1, 0.1, 0.4, 0.37" AbsoluteLayout.LayoutFlags="All"/>
+            LeftStack.Children.Add(NewLabel("test"));
+            testLabel.Text = "test";
         }
 
         private void resetBackAsync()
@@ -148,6 +150,18 @@ namespace CouchTo5kTracker
         private void StopButton_Pressed(object sender, EventArgs e) //is stop button pressed
         {
             Navigation.PopModalAsync(); //Remove most recently added page (Current Run page)
+        }
+
+        private Label NewLabel(string Text)
+        {
+            //must validate
+            Label newLabel = new Label();
+            newLabel.Text = Text;
+            newLabel.FontAttributes = FontAttributes.Bold;
+            newLabel.TextColor = Color.White;
+            newLabel.HorizontalOptions = LayoutOptions.Center;
+            newLabel.VerticalOptions = LayoutOptions.Center;
+            return newLabel; //validate, construct and return a new label of the next run instruction
         }
     }
 }

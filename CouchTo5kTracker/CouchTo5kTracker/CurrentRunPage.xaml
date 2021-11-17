@@ -18,10 +18,18 @@
             </Grid>
             <skia:SKCanvasView x:Name="canvasView" PaintSurface="OnCanvasViewPaintSurface" HorizontalOptions="CenterAndExpand"/>
             <Frame BackgroundColor="#F1F1F1F1" Padding="10,5" Margin="8,0" HorizontalOptions="CenterAndExpand">
-                <StackLayout HorizontalOptions="CenterAndExpand">
-
-                </StackLayout>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout x:Name="LeftStack" Grid.Column="0" HorizontalOptions="CenterAndExpand">
+                    </StackLayout>
+                    <StackLayout x:Name="RightStack" Grid.Column="1" HorizontalOptions="CenterAndExpand">
+                    </StackLayout>
+                </Grid>
             </Frame>
+            <Label x:Name="testLabel"/>
             <Grid VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />

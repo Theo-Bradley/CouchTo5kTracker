@@ -22,17 +22,17 @@ namespace CouchTo5kTracker.Classes
             //used for JSON deserialisation
         }
 
-        public int getMinutes()
+        public int GetMinutes()
         {
             return timeMinutes;
         }
 
-        public int getSeconds()
+        public int GetSeconds()
         {
             return timeSeconds;
         }
 
-        public int getTimeinSeconds()
+        public int GetTimeinSeconds()
         {
             int seconds = 60 * timeMinutes;
             seconds += timeSeconds;

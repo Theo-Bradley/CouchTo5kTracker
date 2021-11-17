@@ -6,23 +6,23 @@ namespace CouchTo5kTracker.Classes
 {
     public class Date
     {
-        public int dateDay;
-        public int dateMonth;
-        public Date(int day, int month)
+        public int day;
+        public int month;
+        public Date(int Day, int Month)
         {
             if (day > 32)
-                dateDay = 32;
+                day = 32;
             if (day < 0)
-                dateDay = 0;
+                day = 0;
             else
-                dateDay = day;
+                day = Day;
 
             if (month > 12)
-                dateMonth = 12;
+                month = 12;
             if (month < 0)
-                dateMonth = 0;
+                month = 0;
             else
-                dateMonth = month;
+                month = Month;
         }
         
         public Date()
@@ -30,14 +30,14 @@ namespace CouchTo5kTracker.Classes
             //used for JSON deserialisation
         }
 
-        public int getDay()
+        public int GetDay()
         {
-            return dateDay;
+            return day;
         }
 
-        public int getMonth()
+        public int GetMonth()
         {
-            return dateMonth;
+            return month;
         }
     }
 }

@@ -35,13 +35,15 @@ const var resourcePrefix = "CouchTo5kTracker.Droid.";
             canvasView.HeightRequest = screenWidth; //keep the canvas square
             string jsonPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "savedRuns.json"); //set the path to the json file containing the saved runs
             //RunGrid.RowSpacing = 0f; //Push the next run up to the next run title
-            Run testRun = new Run("Test Run", new Date(12, 5), Run.WeekEnum.W4, Run.RunEnum.R2, new Time(21, 0)); //create a test run to set as next run
+
+            List<Instruction> testInstructions = new List<Instruction> { };
+            Run testRun = new Run("Test Run", new Date(12, 5), Run.WeekEnum.W4, Run.RunEnum.R2, new Time(21, 0), testInstructions); //create a test run to set as next run
 
             JSON.save(jsonPath, testRun); //save the test run to the saved runs file
             string nextRunJson = JSON.load(jsonPath); //load the next run from the saved runs file
             Run jsonRun = JSON.parse<Run>(nextRunJson); //parse the run and create a new local run from the parsed json
 
-            setNextRun(jsonRun); //update teh run info to the local run
+            setNextRun(jsonRun); //update the run info to the local run
         }
 
         public void SetProgress(float value) //interaction method
@@ -70,11 +72,11 @@ const var resourcePrefix = "CouchTo5kTracker.Droid.";
 
         private void setNextRun(Run nextRun)
         {
-            setNextRunLabel(nextRun.getWeek(), nextRun.getRun()); //set next run label
-            setNextRunDateLabel(nextRun.getDate().getDay(), nextRun.getDate().getMonth()); //set next run date label
-            setWeekCounter(nextRun.getWeek()); //set week label
-            setNextRunTimeLabel(nextRun.getLengthTime()); //set run time label
-            float totalProgress = (((nextRun.getWeek() - 1f) * 3f) + nextRun.getRun()) / 15f; //set progress by getting current run ((week-1)*3 + run) / total runs (fixed number)
+            setNextRunLabel(nextRun.GetWeek(), nextRun.GetRun()); //set next run label
+            setNextRunDateLabel(nextRun.GetDate().GetDay(), nextRun.GetDate().GetMonth()); //set next run date label
+            setWeekCounter(nextRun.GetWeek()); //set week label
+            setNextRunTimeLabel(nextRun.GetLengthTime()); //set run time label
+            float totalProgress = (((nextRun.GetWeek() - 1f) * 3f) + nextRun.GetRun()) / 15f; //set progress by getting current run ((week-1)*3 + run) / total runs (fixed number)
             SetProgress(totalProgress * 100f); //update progress bar
         }
 
@@ -95,8 +97,8 @@ const var resourcePrefix = "CouchTo5kTracker.Droid.";
 
         private void setNextRunTimeLabel(Time time)
         {
-            int seconds = time.getSeconds(); //set the local int seconds to the seconds from the class
-            int minutes = time.getMinutes(); //set the local int minutes to the minutes from the class
+            int seconds = time.GetSeconds(); //set the local int seconds to the seconds from the class
+            int minutes = time.GetMinutes(); //set the local int minutes to the minutes from the class
             RunTimeLabel.Text = String.Format("{0}:{1}", minutes, seconds.ToString("D2")); //format the run label to an appropriate format
         }
 

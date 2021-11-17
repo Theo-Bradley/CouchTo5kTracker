@@ -6,12 +6,12 @@ namespace CouchTo5kTracker.Classes
 {
     public class Run
     {
-        public string runName; //must be public for serialization
-        public Date runDate;
-        public int runWeek;
-        public int runRun;
-        public Time runLength;
-
+        public string name; //must be public for serialization
+        public Date date;
+        public int week;
+        public int run;
+        public Time length;
+        public List<Instruction> instructions;
 
         public enum WeekEnum
         {
@@ -29,19 +29,19 @@ namespace CouchTo5kTracker.Classes
             R3
         }
 
-        public Run(string name, Date date, WeekEnum week, RunEnum run, Classes.Time time)
+        public Run(string Name, Date Date, WeekEnum Week, RunEnum Run, Classes.Time Time, List<Instruction> Instructions)
         {
-            if (name.Length > 0 && name.Length <= 25)
-            runName = name;
+            if (Name.Length > 0 && Name.Length <= 25)
+            name = Name;
             else
-                name = "error";
+                Name = "error";
             
-            runDate = date;
+            date = Date;
 
-            runWeek = (int)week + 1;
-            runRun = (int)run + 1;
+            week = (int)Week + 1;
+            run = (int)Run + 1;
 
-            runLength = time;
+            length = Time;
         }
 
         public Run()
@@ -49,34 +49,34 @@ namespace CouchTo5kTracker.Classes
             //used for JSON deserialisation
         }
 
-        public string getName()
+        public string GetName()
         {
-            return runName;
+            return name;
         }
 
-        public Classes.Date getDate()
+        public Classes.Date GetDate()
         {
-            return runDate;
+            return date;
         }
 
-        public int getWeek()
+        public int GetWeek()
         {
-            return runWeek;
+            return week;
         }
 
-        public int getRun()
+        public int GetRun()
         {
-            return runRun;
+            return run;
         }
 
-        public Classes.Time getLengthTime()
+        public Classes.Time GetLengthTime()
         {
-            return runLength;
+            return length;
         }
 
-        public int getLengthSeconds()
+        public int GetLengthSeconds()
         {
-            return runLength.getTimeinSeconds();
+            return length.GetTimeinSeconds();
         }
     }
 }
